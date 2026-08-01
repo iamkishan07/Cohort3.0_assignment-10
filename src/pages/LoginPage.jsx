@@ -4,8 +4,27 @@ import Login from "../components/Login";
 
 const LoginPage = () => {
   return (
-    <div className="min-h-screen bg-zinc-100 dark:bg-[#0b0b0b] text-zinc-900 dark:text-white grid lg:grid-cols-2 transition-colors">
-      <LoginSection />
+    <div
+      className="
+      min-h-screen
+
+      bg-zinc-100
+      dark:bg-[#0b0b0b]
+
+      text-zinc-900
+      dark:text-white
+
+      grid
+      lg:grid-cols-2
+
+      transition-colors
+      duration-300
+      "
+    >
+      <div className="hidden lg:block">
+        <LoginSection />
+      </div>
+
       <Login />
     </div>
   );
