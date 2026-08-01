@@ -46,50 +46,54 @@ const Register = () => {
   return (
     <div
       className="
-      min-h-screen 
-      bg-[#0b0b0b] 
-      flex 
-      items-center 
-      justify-center 
-      px-4 
+      min-h-screen
+      bg-zinc-100
+      dark:bg-[#0b0b0b]
+      flex
+      items-center
+      justify-center
+      px-4
       py-10
-    "
+      transition-colors
+      "
     >
       <div className="w-full max-w-md">
         {/* Logo */}
 
         <div
           className="
-          flex 
-          justify-center 
-          items-center 
-          gap-3 
+          flex
+          justify-center
+          items-center
+          gap-3
           mb-8
-        "
+          "
         >
           <div
             className="
-            w-12 h-12 
-            rounded-xl 
-            bg-lime-400 
-            flex 
-            items-center 
+            w-12
+            h-12
+            rounded-xl
+            bg-lime-400
+            flex
+            items-center
             justify-center
-          "
+            "
           >
             <Zap className="text-black" size={22} />
           </div>
 
           <h1
             className="
-            text-3xl 
-            sm:text-4xl 
-            font-bold 
-            text-white
-          "
+            text-3xl
+            sm:text-4xl
+            font-bold
+            text-zinc-900
+            dark:text-white
+            "
           >
             Sky
-            <span className="text-lime-400">Mart</span>
+            <span className="text-lime-500 dark:text-lime-400">Mart</span>
           </h1>
         </div>
 
@@ -104,13 +108,17 @@ const Register = () => {
             navigate("/");
           })}
           className="
-            bg-[#121212]
-            border 
-            border-[#2c2c2c]
-            rounded-3xl
-            shadow-2xl
-            p-5
-            sm:p-8
+          bg-white
+          dark:bg-[#121212]
+
+          border
+          border-zinc-200
+          dark:border-[#2c2c2c]
+          rounded-3xl
+          shadow-xl
+          p-5
+          sm:p-8
+          transition-colors
           "
         >
           <h2
@@ -118,18 +126,20 @@ const Register = () => {
             text-3xl
             sm:text-4xl
             font-bold
-            text-white
-          "
+            text-zinc-900
+            dark:text-white
+            "
           >
             Create account
           </h2>
 
           <p
             className="
-            text-gray-500 
-            mt-2 
+            text-zinc-500
+            dark:text-gray-500
+            mt-2
             mb-8
-          "
+            "
           >
             Join SkyMart and start shopping
           </p>
@@ -139,11 +149,12 @@ const Register = () => {
           <div className="relative mb-5">
             <User
               className="
-              absolute 
-              left-4 
-              top-1/2 
-              -translate-y-1/2 
-              text-gray-500
+              absolute
+              left-4
+              top-1/2
+              -translate-y-1/2
+              text-zinc-400
+              dark:text-gray-500
               "
               size={20}
             />
@@ -157,12 +168,17 @@ const Register = () => {
               className="
               w-full
               h-14
-              bg-[#1d1d1d]
+              bg-zinc-100
+              dark:bg-[#1d1d1d]
               border
-              border-[#333]
+              border-zinc-300
+              dark:border-[#333]
               rounded-xl
               pl-12
-              text-white
+
+              text-zinc-900
+              dark:text-white
+              placeholder:text-zinc-500
               outline-none
               focus:border-lime-400
               transition
@@ -179,11 +195,12 @@ const Register = () => {
           <div className="relative mb-5">
             <Mail
               className="
-              absolute 
-              left-4 
-              top-1/2 
-              -translate-y-1/2 
-              text-gray-500
+              absolute
+              left-4
+              top-1/2
+              -translate-y-1/2
+              text-zinc-400
+              dark:text-gray-500
               "
               size={20}
             />
@@ -197,12 +214,15 @@ const Register = () => {
               className="
               w-full
               h-14
-              bg-[#1d1d1d]
+              bg-zinc-100
+              dark:bg-[#1d1d1d]
               border
-              border-[#333]
+              border-zinc-300
+              dark:border-[#333]
               rounded-xl
               pl-12
-              text-white
+              text-zinc-900
+              dark:text-white
               outline-none
               focus:border-lime-400
               transition
@@ -221,11 +241,13 @@ const Register = () => {
           <div className="relative mb-3">
             <Lock
               className="
-              absolute 
-              left-4 
-              top-1/2 
-              -translate-y-1/2 
-              text-gray-500
+              absolute
+              left-4
+              top-1/2
+              -translate-y-1/2
+
+              text-zinc-400
+              dark:text-gray-500
               "
               size={20}
             />
@@ -249,13 +271,16 @@ const Register = () => {
               className="
               w-full
               h-14
-              bg-[#1d1d1d]
+              bg-zinc-100
+              dark:bg-[#1d1d1d]
               border
-              border-[#333]
+              border-zinc-300
+              dark:border-[#333]
               rounded-xl
               pl-12
               pr-12
-              text-white
+              text-zinc-900
+              dark:text-white
               outline-none
               focus:border-lime-400
               transition
@@ -270,7 +295,8 @@ const Register = () => {
               right-4
               top-1/2
               -translate-y-1/2
-              text-gray-500
+              text-zinc-400
+              dark:text-gray-500
               "
             >
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
@@ -284,38 +310,38 @@ const Register = () => {
               <div
                 className="
                 h-2
-                bg-gray-700
+                bg-zinc-300
+                dark:bg-gray-700
                 rounded-full
                 overflow-hidden
-              "
+                "
               >
                 <div
                   className={`
                   h-full
                   transition-all
                   duration-300
-
                   ${passwordStrength === "Weak" && "w-1/3 bg-red-500"}
-
                   ${passwordStrength === "Medium" && "w-2/3 bg-yellow-400"}
-
                   ${passwordStrength === "Strong" && "w-full bg-green-400"}
 
-                `}
-                ></div>
+                  `}
+                />
               </div>
 
               <p
-                className={`text-sm mt-2
+                className={`
+
+                text-sm
+                mt-2
 
                 ${passwordStrength === "Weak" && "text-red-400"}
 
                 ${passwordStrength === "Medium" && "text-yellow-400"}
 
-
                 ${passwordStrength === "Strong" && "text-green-400"}
 
-              `}
+                `}
               >
                 Password strength : {passwordStrength}
               </p>
@@ -331,7 +357,8 @@ const Register = () => {
               left-4
               top-1/2
               -translate-y-1/2
-              text-gray-500
+              text-zinc-400
+              dark:text-gray-500
               "
               size={20}
             />
@@ -348,12 +375,15 @@ const Register = () => {
               className="
               w-full
               h-14
-              bg-[#1d1d1d]
+              bg-zinc-100
+              dark:bg-[#1d1d1d]
               border
-              border-[#333]
+              border-zinc-300
+              dark:border-[#333]
               rounded-xl
               pl-12
-              text-white
+              text-zinc-900
+              dark:text-white
               outline-none
               focus:border-lime-400
               transition
@@ -366,7 +396,7 @@ const Register = () => {
                 text-red-400
                 text-sm
                 mt-1
-              "
+                "
               >
                 {errors.confirmpassword.message}
               </p>
@@ -389,6 +419,7 @@ const Register = () => {
             flex
             justify-center
             items-center
+
             gap-2
             "
           >
@@ -396,18 +427,21 @@ const Register = () => {
             <ArrowRight size={22} />
           </button>
 
+          {/* Login */}
+
           <p
             className="
             text-center
-            text-gray-500
+            text-zinc-500
             mt-8
-          "
+            "
           >
             Already have an account?
             <span
               onClick={() => navigate("/")}
               className="
-              text-lime-400
+              text-lime-500
+              dark:text-lime-400
               ml-2
               cursor-pointer
               hover:underline

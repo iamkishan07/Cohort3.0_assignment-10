@@ -9,15 +9,29 @@ const MyCartCard = ({ product }) => {
   return (
     <div
       className="
-      border border-zinc-700 
-      rounded-2xl 
-      p-4 
-      flex 
+      bg-white
+      dark:bg-[#202020]
+
+      border
+      border-zinc-200
+      dark:border-zinc-700
+
+      rounded-2xl
+      p-4
+
+      flex
       gap-4
-      transition 
+
+      transition
       duration-300
-      hover:border-[#d6ff00]/40
+
+      hover:border-lime-500
+      dark:hover:border-[#d6ff00]/40
+
       hover:-translate-y-1
+
+      shadow-sm
+      dark:shadow-none
       "
     >
       {/* IMAGE */}
@@ -39,9 +53,12 @@ const MyCartCard = ({ product }) => {
       <div className="flex-1 min-w-0">
         <h3
           className="
-          text-white 
-          text-lg 
-          font-medium 
+          text-zinc-900
+          dark:text-white
+
+          text-lg
+          font-medium
+
           line-clamp-2
           "
         >
@@ -50,22 +67,32 @@ const MyCartCard = ({ product }) => {
 
         <p
           className="
-          text-[#d6ff00] 
-          text-2xl 
-          font-bold 
+          text-lime-600
+          dark:text-[#d6ff00]
+
+          text-2xl
+          font-bold
+
           mt-2
           "
         >
           ${(product.price * product.quantity).toFixed(2)}
         </p>
 
-        <p className="text-zinc-500 text-sm">${product.price} each</p>
+        <p
+          className="
+          text-zinc-500
+          text-sm
+          "
+        >
+          ${product.price} each
+        </p>
 
         <div
           className="
-          flex 
-          justify-between 
-          items-center 
+          flex
+          justify-between
+          items-center
           mt-4
           "
         >
@@ -77,16 +104,26 @@ const MyCartCard = ({ product }) => {
               className="
               w-8
               h-8
+
               border
-              border-zinc-700
+              border-zinc-300
+              dark:border-zinc-700
+
               rounded-lg
+
               flex
               items-center
               justify-center
-              text-white
-              hover:border-[#d6ff00]
+
+              text-zinc-800
+              dark:text-white
+
+              hover:border-lime-500
+              dark:hover:border-[#d6ff00]
+
               hover:scale-110
               active:scale-95
+
               transition
               "
             >
@@ -95,8 +132,10 @@ const MyCartCard = ({ product }) => {
 
             <span
               className="
-              text-white 
-              w-6 
+              text-zinc-900
+              dark:text-white
+
+              w-6
               text-center
               "
             >
@@ -108,16 +147,26 @@ const MyCartCard = ({ product }) => {
               className="
               w-8
               h-8
+
               border
-              border-zinc-700
+              border-zinc-300
+              dark:border-zinc-700
+
               rounded-lg
+
               flex
               items-center
               justify-center
-              text-white
-              hover:border-[#d6ff00]
+
+              text-zinc-800
+              dark:text-white
+
+              hover:border-lime-500
+              dark:hover:border-[#d6ff00]
+
               hover:scale-110
               active:scale-95
+
               transition
               "
             >
@@ -131,8 +180,10 @@ const MyCartCard = ({ product }) => {
             onClick={() => removeFromCart(product.id)}
             className="
             text-red-500
+
             hover:scale-110
             hover:rotate-6
+
             transition
             "
           >

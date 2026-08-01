@@ -4,7 +4,6 @@ import axios from "axios";
 export const MyStore = createContext();
 
 export const ContextProvider = ({ children }) => {
-
   const [productData, setProductData] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -105,8 +104,8 @@ export const ContextProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-  setCartProducts([]);
-};
+    setCartProducts([]);
+  };
 
   const addToWishlist = (product) => {
     setWishlistProducts((prev) => {
@@ -150,6 +149,21 @@ export const ContextProvider = ({ children }) => {
     }, {}),
   );
 
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
+  
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+
   return (
     <MyStore.Provider
       value={{
@@ -168,6 +182,8 @@ export const ContextProvider = ({ children }) => {
         wishlistProducts,
         addToWishlist,
         removeFromWishlist,
+        theme,
+        setTheme,
       }}
     >
       {children}

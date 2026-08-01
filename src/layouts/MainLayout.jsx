@@ -10,7 +10,7 @@ const MainLayout = () => {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen bg-black">
+      <div className="flex flex-col min-h-screen bg-zinc-100 dark:bg-black transition-colors">
         <Navbar />
 
         <main className="flex-1">

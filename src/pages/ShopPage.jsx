@@ -22,7 +22,6 @@ const ShopPage = () => {
 
   const filteredProducts = productData.filter((item) => {
     const matchCategory = category === "All" || item.category === category;
-
     const matchSearch = item.title.toLowerCase().includes(search.toLowerCase());
 
     return matchCategory && matchSearch;
@@ -45,8 +44,7 @@ const ShopPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black px-6 py-8 max-w-7xl flex flex-col mx-auto">
-      {/* Filter */}
+    <div className="min-h-screen bg-zinc-100 dark:bg-black px-6 py-8 max-w-7xl flex flex-col mx-auto transition-colors">
       <Filter
         category={category}
         setCategory={setCategory}
@@ -56,9 +54,8 @@ const ShopPage = () => {
         setSortBy={setSortBy}
       />
 
-      {/* Products */}
       <div className="mt-8">
-        <h2 className="text-2xl font-bold text-white mb-5">
+        <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-5">
           Featured Products
         </h2>
 

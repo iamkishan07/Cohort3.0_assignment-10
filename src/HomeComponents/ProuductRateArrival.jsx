@@ -7,11 +7,10 @@ const ProductRateArrival = () => {
   const { productData } = useContext(MyStore);
 
   const topRated = productData.filter((item) => item.rating >= 4).slice(0, 5);
-
   const newArrival = productData.slice(-5);
 
   return (
-    <section className="bg-[#111] py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+    <section className="bg-zinc-100 dark:bg-[#111] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 transition-colors">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
         <RatingCardList
           title="Top Rated"

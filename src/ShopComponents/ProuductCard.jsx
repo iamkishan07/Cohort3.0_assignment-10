@@ -12,10 +12,33 @@ const ProuductCard = ({ product }) => {
   return (
     <div
       onClick={() => navigate(`/main/product/${product.id}`)}
-      className="w-full bg-[#111111] rounded-2xl overflow-hidden shadow-lg border border-gray-800 hover:border-lime-400 transition-all duration-300 group cursor-pointer"
+      className="
+      w-full
+
+      bg-white
+      dark:bg-[#111111]
+
+      rounded-2xl
+
+      overflow-hidden
+
+      shadow-lg
+
+      border
+      border-zinc-200
+      dark:border-gray-800
+
+      hover:border-lime-400
+
+      transition-all
+      duration-300
+
+      group
+
+      cursor-pointer
+      "
     >
-      {/* Image Section */}
-      <div className="relative bg-[#1b1b1b] h-52 sm:h-60 lg:h-64 flex items-center justify-center overflow-hidden">
+      <div className="relative bg-zinc-100 dark:bg-[#1b1b1b] h-52 sm:h-60 lg:h-64 flex items-center justify-center overflow-hidden">
         <span className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-lime-400 text-black text-xs font-bold px-3 py-1 rounded-full z-10">
           {product.category}
         </span>
@@ -27,9 +50,8 @@ const ProuductCard = ({ product }) => {
         />
       </div>
 
-      {/* Content Section */}
-      <div className="p-4 sm:p-5 text-white">
-        <p className="text-lime-400 text-xs sm:text-sm font-semibold mb-2">
+      <div className="p-4 sm:p-5 text-zinc-900 dark:text-white">
+        <p className="text-lime-600 dark:text-lime-400 text-xs sm:text-sm font-semibold mb-2">
           Premium Quality
         </p>
 
@@ -37,21 +59,23 @@ const ProuductCard = ({ product }) => {
           {product.title}
         </h3>
 
-        {/* Rating */}
         <div className="flex flex-wrap items-center gap-2 mt-3">
-          <span className="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</span>
+          <span className="text-yellow-400 text-sm">
+            ⭐⭐⭐⭐⭐
+          </span>
 
-          <span className="text-gray-400 text-xs sm:text-sm">
+          <span className="text-zinc-500 dark:text-gray-400 text-xs sm:text-sm">
             (120 Reviews)
           </span>
         </div>
 
-        {/* Price + Cart */}
         <div className="flex items-center justify-between gap-3 mt-5">
           <div>
-            <p className="text-gray-400 text-xs sm:text-sm">Price</p>
+            <p className="text-zinc-500 dark:text-gray-400 text-xs sm:text-sm">
+              Price
+            </p>
 
-            <h1 className="text-xl sm:text-2xl font-bold text-lime-400">
+            <h1 className="text-xl sm:text-2xl font-bold text-lime-600 dark:text-lime-400">
               {product.price}$
             </h1>
           </div>
@@ -66,12 +90,11 @@ const ProuductCard = ({ product }) => {
 
               setIsCartOpen(true);
             }}
-            className={`flex items-center gap-2 font-semibold px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl transition duration-300
-    ${
-      isInCart
-        ? "bg-green-500 text-white hover:bg-green-600"
-        : "bg-lime-400 text-black hover:bg-lime-300"
-    }`}
+            className={`flex items-center gap-2 font-semibold px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl transition duration-300 ${
+              isInCart
+                ? "bg-green-500 text-white hover:bg-green-600"
+                : "bg-lime-400 text-black hover:bg-lime-300"
+            }`}
           >
             <ShoppingCart size={18} />
 
